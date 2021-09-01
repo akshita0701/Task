@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="JavaScript" href="JS.js">
+    <title>Document</title>
+</head>
+<script>
+    function newitem() {
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("text").value;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+        if (inputValue === '') {
+            alert("Add some work to be done.!");
+        } else {
+            document.getElementById("list").appendChild(li);
+        }
+        document.getElementById("text").value = "";
+
+
+    }
+
+    function removeItem() {
+
+        // Declaring a variable to get select element
+        var a = document.getElementById("list");
+        var candidate = document.getElementById("text");
+        var item = document.getElementById(candidate.value);
+        a.removeChild(item);
+    }
+    // function remove() {
+    //     var inputValue = document.getElementById("text").value;
+    //     if (inputValue === "") {
+    //         alert("Item not found in the list");
+    //     } else {
+    //         alert("Work done.!")
+    //     }
+    //     var a = document.getElementById("list");
+    //     var candidate = document.getElementById("text");
+    //     var item = document.getElementById(candidate.value);
+
+    //     list.removeChild(itam);
+    //     // if (inputValue === " ") {
+    //     //     alert("Item not found in the list");
+    //     // } else {
+    //     //     alert("Work done.!")
+    //     // }
+    // }
+</script>
+
+<body>
+    <div id="demo" class="header">
+        <h1>To Do List</h1>
+        <input type="text" id="text" placeholder="Add Work to be done">
+        <button class="button" onclick="newitem()">Add</button>
+        <button class="button" onclick="removeItem()">Remove</button>
+
+    </div>
+    <ul id="list">
+        <!-- <li class="checked">HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li> -->
+    </ul>
+
+
+</body>
+
+</html>
